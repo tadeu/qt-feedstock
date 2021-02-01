@@ -5,7 +5,9 @@ package:
   version: {{ version }}
 
 source:
-  url: http://download.qt.io/official_releases/qt/5.6/{{ version }}/single/qt-everywhere-opensource-src-{{ version }}.tar.gz
+  # This version is very old and is not available in the official server anymore
+  # url: http://download.qt.io/official_releases/qt/5.6/{{ version }}/single/qt-everywhere-opensource-src-{{ version }}.tar.gz
+  url: http://qtmirror.ics.com/pub/qtproject/archive/qt/5.6/{{ version }}/single/qt-everywhere-opensource-src-{{ version }}.tar.gz
   sha256: 7551f5af1312082c3c8ab52f5e102e3f83aae2dd96dc4a3a9a197f3e58b3214c
   patches:
     - 0005-Remove-unused-include-sys-signalfd.h.patch
@@ -23,7 +25,7 @@ source:
     - 0001-shobjidl-Fix-compile-guard-around-SHARDAPPIDINFOLINK.patch  # [win]
 
 build:
-  number: 1013
+  number: 1014
   skip: True  # [ win]
   detect_binary_files_with_prefix: true
 
